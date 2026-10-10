@@ -1,5 +1,5 @@
 <!doctype html><html lang="zh-Hant"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1"><style>:root{color-scheme:light}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found]){display:none!important}</style></head><body>
-<title>宏福苑大火全紀錄｜3D 互動重建</title>
+<title>宏福苑大火全紀錄｜專題</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;600;700;900&family=Noto+Sans+TC:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap">
@@ -603,11 +603,6 @@ body.mode-3d{background:#17110d;color:#f5ede1;}
 @media (prefers-reduced-motion: reduce){ .paper,.b-node,.b-edge{transition:none;} .paper mark{transition:none;} .b-node.is-new .ring{animation:none;} }
 @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto;}}
 </style>
-<div id="site-intro" role="dialog" aria-label="開場動畫">
-  <iframe id="site-intro-frame" title="宏福苑 開場動畫"></iframe>
-  <button id="site-intro-skip" type="button">跳過開場 ▶▶</button>
-  <div id="site-intro-bar"><i></i></div>
-</div>
 <div id="app-root"></div>
 <script>
 const SITE_DATA = {
@@ -1098,7 +1093,7 @@ var HEAD_EXTRA = '';
 (function(){
   var css = document.querySelector('style') ? document.querySelector('style').textContent : '';
   HEAD_EXTRA = ''
-  + '<title>宏福苑大火全紀錄｜3D 互動重建</title>'
+  + '<title>宏福苑大火全紀錄｜專題</title>'
   + '<link rel="preconnect" href="https://fonts.googleapis.com">'
   + '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
   + '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;600;700;900&family=Noto+Sans+TC:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap">'
@@ -1844,7 +1839,7 @@ function renderDashboardPage(){
 }
 
 // each page renders its own half; the other half is its own HTML file
-var PAGE = '3d', LINK_FEATURE = 'feature.html', LINK_3D = 'index.html';
+var PAGE = 'feature', LINK_FEATURE = 'feature.html', LINK_3D = 'index.html';
 function bodyShell(){
   return (PAGE === 'feature' ? renderEditorialPage() : renderDashboardPage()) + editModalHtml();
 }
@@ -3054,7 +3049,7 @@ try{ var saved = localStorage.getItem('wfc-lang'); if (saved) { LANG = saved; SI
 document.body.className = '';
 document.addEventListener('keydown', function(e){ if (e.key === 'Escape') closeVictim(); });
 rerenderAll();
-siteIntro();
+showEditorial();
 detectWriteAccess();
 
 }
